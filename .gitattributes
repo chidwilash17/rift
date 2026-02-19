@@ -1,0 +1,27 @@
+# Force LF line endings for all text files on all platforms
+# This prevents CRLF breaking Vercel/Linux builds from Windows dev machines
+
+* text=auto eol=lf
+
+# Explicitly LF for these
+*.js   text eol=lf
+*.jsx  text eol=lf
+*.ts   text eol=lf
+*.tsx  text eol=lf
+*.json text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.py   text eol=lf
+*.yaml text eol=lf
+*.yml  text eol=lf
+*.toml text eol=lf
+
+# Binaries — never touch
+*.png  binary
+*.jpg  binary
+*.ico  binary
+*.svg  binary
+*.woff binary
+*.woff2 binary
+*.exe  binary
