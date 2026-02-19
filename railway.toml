@@ -1,0 +1,25 @@
+# Railway deployment configuration
+# Docs: https://docs.railway.app
+#
+# Deploy steps:
+#   1. Go to https://railway.app → New Project → Deploy from GitHub
+#   2. Select this repo
+#   3. Railway auto-detects Python and uses this file
+#   4. Add env vars in the Railway dashboard:
+#        GROQ_API_KEY=<your key>
+#        MAX_QUANTUM_RINGS=3
+#        MAX_GRAPH_VIZ_NODES=600
+#        MAX_GRAPH_VIZ_EDGES=1500
+#        LLM_MAX_TURNS=6
+#   5. Update frontend/src/apiClient.js BASE to your Railway URL
+#
+# Railway gives $5 free credit/month — enough for ~500 hours of this app.
+# No sleep/cold-start on free tier (unlike Render).
+
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT --timeout-keep-alive 120"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3

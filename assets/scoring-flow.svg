@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 340" fill="none">
+  <defs>
+    <radialGradient id="sbg" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#080b14"/></radialGradient>
+    <filter id="sg"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="sg2"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="sscan" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4facfe" stop-opacity="0"/><stop offset="50%" stop-color="#4facfe" stop-opacity="0.08"/><stop offset="100%" stop-color="#4facfe" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1050" height="340" fill="url(#sbg)" rx="14"/>
+  <g opacity="0.04"><line x1="0" y1="85" x2="1050" y2="85" stroke="#4facfe" stroke-width="0.5"/><line x1="0" y1="170" x2="1050" y2="170" stroke="#4facfe" stroke-width="0.5"/><line x1="0" y1="255" x2="1050" y2="255" stroke="#4facfe" stroke-width="0.5"/></g>
+  <rect width="60" height="340" fill="url(#sscan)"><animate attributeName="x" values="-60;1050" dur="4s" repeatCount="indefinite"/></rect>
+
+  <text x="525" y="30" text-anchor="middle" fill="#c9d1d9" font-size="16" font-family="'Segoe UI',sans-serif" font-weight="800" letter-spacing="1.5">WEIGHTED SCORING ENGINE</text>
+  <rect x="330" y="37" width="390" height="1.5" rx="0.75" fill="#4facfe" opacity="0.3"><animate attributeName="opacity" values="0.2;0.5;0.2" dur="3s" repeatCount="indefinite"/></rect>
+
+  <!-- Graph Agent Box -->
+  <g transform="translate(30,60)">
+    <rect width="200" height="120" rx="12" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite"/></rect>
+    <rect width="200" height="4" rx="2" fill="#58a6ff" opacity="0.5"/>
+    <text x="100" y="30" text-anchor="middle" fill="#58a6ff" font-size="22">🔗</text>
+    <text x="100" y="50" text-anchor="middle" fill="#58a6ff" font-size="12" font-family="monospace" font-weight="800">Graph Agent</text>
+    <text x="100" y="68" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">SCC · PageRank · Betweenness</text>
+    <!-- Gauge animation -->
+    <rect x="30" y="80" width="140" height="10" rx="5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+    <rect x="30" y="80" width="0" height="10" rx="5" fill="#58a6ff" opacity="0.7"><animate attributeName="width" values="0;56" dur="1.5s" fill="freeze"/></rect>
+    <text x="100" y="108" text-anchor="middle" fill="#58a6ff" font-size="14" font-family="monospace" font-weight="900">Weight: 0.40</text>
+  </g>
+
+  <!-- ML Agent Box -->
+  <g transform="translate(30,200)">
+    <rect width="200" height="120" rx="12" fill="#0d1117" stroke="#a371f7" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" begin="0.5s"/></rect>
+    <rect width="200" height="4" rx="2" fill="#a371f7" opacity="0.5"/>
+    <text x="100" y="30" text-anchor="middle" fill="#a371f7" font-size="22">🤖</text>
+    <text x="100" y="50" text-anchor="middle" fill="#a371f7" font-size="12" font-family="monospace" font-weight="800">ML Agent</text>
+    <text x="100" y="68" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">IsolationForest + RandomForest</text>
+    <rect x="30" y="80" width="140" height="10" rx="5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+    <rect x="30" y="80" width="0" height="10" rx="5" fill="#a371f7" opacity="0.7"><animate attributeName="width" values="0;49" dur="1.5s" fill="freeze" begin="0.3s"/></rect>
+    <text x="100" y="108" text-anchor="middle" fill="#a371f7" font-size="14" font-family="monospace" font-weight="900">Weight: 0.35</text>
+  </g>
+
+  <!-- Quantum Agent Box (centered between the two) -->
+  <g transform="translate(260,130)">
+    <rect width="200" height="120" rx="12" fill="#0d1117" stroke="#f97583" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="3s" repeatCount="indefinite" begin="1s"/></rect>
+    <rect width="200" height="4" rx="2" fill="#f97583" opacity="0.5"/>
+    <text x="100" y="30" text-anchor="middle" fill="#f97583" font-size="22">⚛️</text>
+    <text x="100" y="50" text-anchor="middle" fill="#f97583" font-size="12" font-family="monospace" font-weight="800">Quantum Agent</text>
+    <text x="100" y="68" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">QAOA Max-Cut · Qiskit Aer</text>
+    <rect x="30" y="80" width="140" height="10" rx="5" fill="#161b22" stroke="#21262d" stroke-width="0.5"/>
+    <rect x="30" y="80" width="0" height="10" rx="5" fill="#f97583" opacity="0.7"><animate attributeName="width" values="0;35" dur="1.5s" fill="freeze" begin="0.6s"/></rect>
+    <text x="100" y="108" text-anchor="middle" fill="#f97583" font-size="14" font-family="monospace" font-weight="900">Weight: 0.25</text>
+  </g>
+
+  <!-- Score flow arrows with particles -->
+  <line x1="230" y1="120" x2="385" y2="170" stroke="#58a6ff" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+  <line x1="230" y1="260" x2="385" y2="210" stroke="#a371f7" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+  <circle r="3.5" fill="#58a6ff" filter="url(#sg2)"><animate attributeName="cx" values="230;385" dur="2s" repeatCount="indefinite"/><animate attributeName="cy" values="120;170" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="2s" repeatCount="indefinite"/></circle>
+  <circle r="3.5" fill="#a371f7" filter="url(#sg2)"><animate attributeName="cx" values="230;385" dur="2s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="cy" values="260;210" dur="2s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="opacity" values="0;0.9;0" dur="2s" repeatCount="indefinite" begin="0.5s"/></circle>
+
+  <!-- Arrow to Aggregator -->
+  <line x1="460" y1="190" x2="530" y2="190" stroke="#3fb950" stroke-width="2" stroke-dasharray="5 3" opacity="0.5"/>
+  <circle r="4" fill="#3fb950" filter="url(#sg2)"><animate attributeName="cx" values="460;530" dur="1.5s" repeatCount="indefinite"/><animate attributeName="cy" values="190;190" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/></circle>
+  <circle r="3" fill="#f97583" filter="url(#sg2)"><animate attributeName="cx" values="460;530" dur="1.5s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="cy" values="190;190" dur="1.5s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="opacity" values="0;0.8;0" dur="1.5s" repeatCount="indefinite" begin="0.5s"/></circle>
+
+  <!-- Aggregator box -->
+  <g transform="translate(540,120)">
+    <rect width="180" height="140" rx="14" fill="#0d1117" stroke="#3fb950" stroke-width="2"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect>
+    <rect width="180" height="5" rx="2.5" fill="#3fb950" opacity="0.6"/>
+    <text x="90" y="30" text-anchor="middle" fill="#3fb950" font-size="22">⚖️</text>
+    <text x="90" y="50" text-anchor="middle" fill="#3fb950" font-size="13" font-family="monospace" font-weight="800">AGGREGATOR</text>
+    <text x="90" y="70" text-anchor="middle" fill="#c9d1d9" font-size="9" font-family="monospace">0.40·G + 0.35·M + 0.25·Q</text>
+    <!-- Formula box -->
+    <rect x="15" y="80" width="150" height="24" rx="6" fill="#3fb950" opacity="0.08" stroke="#3fb950" stroke-width="0.5"/>
+    <text x="90" y="97" text-anchor="middle" fill="#3fb950" font-size="11" font-family="monospace" font-weight="700">score = Σ(wᵢ · sᵢ)</text>
+    <text x="90" y="120" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">threshold = 25</text>
+    <text x="90" y="134" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace" font-weight="700">→ CLASSIFY ALL</text>
+  </g>
+
+  <!-- Arrow to Output -->
+  <line x1="720" y1="190" x2="790" y2="150" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+  <line x1="720" y1="190" x2="790" y2="235" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.4"/>
+  <circle r="3" fill="#fbbf24" filter="url(#sg2)"><animate attributeName="cx" values="725;790" dur="1.8s" repeatCount="indefinite"/><animate attributeName="cy" values="190;150" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite"/></circle>
+  <circle r="3" fill="#ef4444" filter="url(#sg2)"><animate attributeName="cx" values="725;790" dur="1.8s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="cy" values="190;235" dur="1.8s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="opacity" values="0;1;0" dur="1.8s" repeatCount="indefinite" begin="0.5s"/></circle>
+
+  <!-- Output: Clean -->
+  <g transform="translate(800,100)">
+    <rect width="210" height="65" rx="10" fill="#0d1117" stroke="#3fb950" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite"/></rect>
+    <rect width="210" height="3" rx="1.5" fill="#3fb950" opacity="0.6"/>
+    <text x="105" y="22" text-anchor="middle" fill="#3fb950" font-size="18">✅</text>
+    <text x="105" y="40" text-anchor="middle" fill="#3fb950" font-size="11" font-family="monospace" font-weight="700">CLEAN ACCOUNTS</text>
+    <text x="105" y="55" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">score &lt; 25 → safe</text>
+  </g>
+
+  <!-- Output: Suspicious -->
+  <g transform="translate(800,190)">
+    <rect width="210" height="65" rx="10" fill="#0d1117" stroke="#fbbf24" stroke-width="1.2"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" begin="0.3s"/></rect>
+    <rect width="210" height="3" rx="1.5" fill="#fbbf24" opacity="0.6"/>
+    <text x="105" y="22" text-anchor="middle" fill="#fbbf24" font-size="18">⚠️</text>
+    <text x="105" y="40" text-anchor="middle" fill="#fbbf24" font-size="11" font-family="monospace" font-weight="700">SUSPICIOUS</text>
+    <text x="105" y="55" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">25 ≤ score &lt; 60</text>
+  </g>
+
+  <!-- Output: High Risk -->
+  <g transform="translate(800,275)">
+    <rect width="210" height="55" rx="10" fill="#0d1117" stroke="#ef4444" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect>
+    <rect width="210" height="3" rx="1.5" fill="#ef4444" opacity="0.7"/>
+    <text x="25" y="30" fill="#ef4444" font-size="16">🚨</text>
+    <text x="105" y="28" text-anchor="middle" fill="#ef4444" font-size="11" font-family="monospace" font-weight="700">HIGH RISK MULE</text>
+    <text x="105" y="45" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">score ≥ 60 → disrupt + LLM</text>
+    <circle cx="195" cy="40" r="5" fill="#ef4444" opacity="0.4" filter="url(#sg)"><animate attributeName="r" values="4;7;4" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.2;0.6;0.2" dur="1.5s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- Floating particles -->
+  <circle r="1.5" fill="#4facfe" opacity="0.3" filter="url(#sg2)"><animate attributeName="cx" values="50;1000;50" dur="20s" repeatCount="indefinite"/><animate attributeName="cy" values="300;100;300" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.4;0" dur="6s" repeatCount="indefinite"/></circle>
+  <circle r="1.8" fill="#3fb950" opacity="0.2" filter="url(#sg2)"><animate attributeName="cx" values="1000;50;1000" dur="18s" repeatCount="indefinite"/><animate attributeName="cy" values="100;300;100" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.3;0" dur="5s" repeatCount="indefinite"/></circle>
+</svg>

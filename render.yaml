@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: money-muling-detector
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT --timeout-keep-alive 120 --timeout-graceful-shutdown 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      # ── Performance tuning for Render free tier ──
+      # Reduce quantum circuits (set to 0 to skip all QAOA — fastest)
+      - key: MAX_QUANTUM_RINGS
+        value: 3
+      # Cap graph viz payload (nodes + edges in JSON response)
+      - key: MAX_GRAPH_VIZ_NODES
+        value: 600
+      - key: MAX_GRAPH_VIZ_EDGES
+        value: 1500
+      # LLM conversation turns (6 = 3 parallel + 3 serial = ~4 serial-equivalent calls)
+      - key: LLM_MAX_TURNS
+        value: 6

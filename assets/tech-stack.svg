@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 220" fill="none">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="1000" y2="220">
+      <stop offset="0%" stop-color="#0d1117"/><stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <filter id="tg"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="tg2"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1000" height="220" fill="url(#tbg)" rx="12"/>
+  
+  <!-- Title -->
+  <text x="500" y="28" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="monospace" font-weight="700">Technology Stack</text>
+
+  <!-- Tech cards -->
+  <!-- Python -->
+  <g transform="translate(32, 48)">
+    <rect width="140" height="130" rx="12" fill="#161b22" stroke="#3776AB" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <rect width="140" height="3" rx="1.5" fill="#3776AB" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <text x="70" y="45" text-anchor="middle" fill="#3776AB" font-size="28" filter="url(#tg)">🐍</text>
+    <text x="70" y="70" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="'Segoe UI', sans-serif" font-weight="800">Python 3.14</text>
+    <text x="70" y="88" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">Backend Runtime</text>
+    <text x="70" y="105" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">FastAPI + Uvicorn</text>
+    <circle cx="120" cy="118" r="3" fill="#3fb950" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <text x="110" y="121" text-anchor="end" fill="#3fb950" font-size="7" font-family="monospace">Active</text>
+  </g>
+
+  <!-- React -->
+  <g transform="translate(187, 48)">
+    <rect width="140" height="130" rx="12" fill="#161b22" stroke="#61DAFB" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <rect width="140" height="3" rx="1.5" fill="#61DAFB" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <!-- Animated React atom -->
+    <circle cx="70" cy="40" r="4" fill="#61DAFB" opacity="0.8"/>
+    <ellipse cx="70" cy="40" rx="18" ry="7" fill="none" stroke="#61DAFB" stroke-width="0.8" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="0 70 40" to="360 70 40" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="70" cy="40" rx="18" ry="7" fill="none" stroke="#61DAFB" stroke-width="0.8" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="60 70 40" to="420 70 40" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="70" cy="40" rx="18" ry="7" fill="none" stroke="#61DAFB" stroke-width="0.8" opacity="0.5">
+      <animateTransform attributeName="transform" type="rotate" from="120 70 40" to="480 70 40" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <text x="70" y="70" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="'Segoe UI', sans-serif" font-weight="800">React 18</text>
+    <text x="70" y="88" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">Frontend SPA</text>
+    <text x="70" y="105" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">Vite + Tailwind</text>
+    <circle cx="120" cy="118" r="3" fill="#3fb950" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" begin="0.2s"/>
+    </circle>
+    <text x="110" y="121" text-anchor="end" fill="#3fb950" font-size="7" font-family="monospace">Active</text>
+  </g>
+
+  <!-- NetworkX -->
+  <g transform="translate(342, 48)">
+    <rect width="140" height="130" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <rect width="140" height="3" rx="1.5" fill="#58a6ff" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <!-- Animated mini graph -->
+    <circle cx="55" cy="35" r="4" fill="#58a6ff" opacity="0.6"/>
+    <circle cx="85" cy="30" r="4" fill="#58a6ff" opacity="0.6"/>
+    <circle cx="70" cy="50" r="4" fill="#58a6ff" opacity="0.6"/>
+    <line x1="55" y1="35" x2="85" y2="30" stroke="#58a6ff" stroke-width="0.8" opacity="0.4"/>
+    <line x1="55" y1="35" x2="70" y2="50" stroke="#58a6ff" stroke-width="0.8" opacity="0.4"/>
+    <line x1="85" y1="30" x2="70" y2="50" stroke="#58a6ff" stroke-width="0.8" opacity="0.4"/>
+    <circle r="2" fill="#58a6ff" filter="url(#tg)">
+      <animate attributeName="cx" values="55;85;70;55" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="35;30;50;35" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="70" y="70" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="'Segoe UI', sans-serif" font-weight="800">NetworkX</text>
+    <text x="70" y="88" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">Graph Analysis</text>
+    <text x="70" y="105" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">DiGraph + SCC + PageRank</text>
+    <circle cx="120" cy="118" r="3" fill="#58a6ff" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" begin="0.4s"/>
+    </circle>
+    <text x="110" y="121" text-anchor="end" fill="#58a6ff" font-size="7" font-family="monospace">Core</text>
+  </g>
+
+  <!-- scikit-learn -->
+  <g transform="translate(497, 48)">
+    <rect width="140" height="130" rx="12" fill="#161b22" stroke="#F7931E" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <rect width="140" height="3" rx="1.5" fill="#F7931E" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <text x="70" y="45" text-anchor="middle" fill="#F7931E" font-size="28" filter="url(#tg)">🤖</text>
+    <text x="70" y="70" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="'Segoe UI', sans-serif" font-weight="800">scikit-learn</text>
+    <text x="70" y="88" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">ML Engine</text>
+    <text x="70" y="105" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">IF + RF · 25 features</text>
+    <circle cx="120" cy="118" r="3" fill="#F7931E" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <text x="110" y="121" text-anchor="end" fill="#F7931E" font-size="7" font-family="monospace">Core</text>
+  </g>
+
+  <!-- Qiskit -->
+  <g transform="translate(652, 48)">
+    <rect width="140" height="130" rx="12" fill="#161b22" stroke="#6929C4" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <rect width="140" height="3" rx="1.5" fill="#6929C4" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <!-- Quantum symbol with orbital -->
+    <circle cx="70" cy="38" r="5" fill="#6929C4" opacity="0.6">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="70" cy="38" r="14" fill="none" stroke="#6929C4" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 3">
+      <animateTransform attributeName="transform" type="rotate" from="0 70 38" to="360 70 38" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="2" fill="#c4b5fd">
+      <animate attributeName="cx" values="56;84;56" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="38;38;38" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="70" y="70" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="'Segoe UI', sans-serif" font-weight="800">Qiskit Aer</text>
+    <text x="70" y="88" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">Quantum Sim</text>
+    <text x="70" y="105" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">QAOA · 8 qubits · 512 shots</text>
+    <circle cx="120" cy="118" r="3" fill="#6929C4" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+    <text x="110" y="121" text-anchor="end" fill="#c4b5fd" font-size="7" font-family="monospace">Core</text>
+  </g>
+
+  <!-- Groq LLM -->
+  <g transform="translate(807, 48)">
+    <rect width="140" height="130" rx="12" fill="#161b22" stroke="#f472b6" stroke-width="1.5" opacity="0.9">
+      <animate attributeName="stroke-opacity" values="0.3;1;0.3" dur="4s" repeatCount="indefinite" begin="2.5s"/>
+    </rect>
+    <rect width="140" height="3" rx="1.5" fill="#f472b6" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" begin="2.5s"/>
+    </rect>
+    <text x="70" y="45" text-anchor="middle" fill="#f472b6" font-size="28" filter="url(#tg)">🧠</text>
+    <text x="70" y="70" text-anchor="middle" fill="#c9d1d9" font-size="13" font-family="'Segoe UI', sans-serif" font-weight="800">Groq LLM</text>
+    <text x="70" y="88" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">AI Forensics</text>
+    <text x="70" y="105" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">Llama-3.3-70B · 4 agents</text>
+    <circle cx="120" cy="118" r="3" fill="#f472b6" opacity="0.8">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <text x="110" y="121" text-anchor="end" fill="#f472b6" font-size="7" font-family="monospace">Core</text>
+  </g>
+
+  <!-- Bottom connection line -->
+  <line x1="100" y1="195" x2="900" y2="195" stroke="#21262d" stroke-width="1"/>
+  <circle r="3" fill="#4facfe" opacity="0.6" filter="url(#tg)">
+    <animate attributeName="cx" values="100;900;100" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="195;195;195" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="3" fill="#a371f7" opacity="0.6" filter="url(#tg)">
+    <animate attributeName="cx" values="900;100;900" dur="6s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="195;195;195" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <text x="500" y="212" text-anchor="middle" fill="#30363d" font-size="8" font-family="monospace">All components communicating through FastAPI Gateway</text>
+</svg>

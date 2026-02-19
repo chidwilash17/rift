@@ -1,0 +1,317 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" fill="none">
+  <defs>
+    <!-- Premium gradients -->
+    <radialGradient id="hbg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1a1f35"/>
+      <stop offset="40%" stop-color="#0f1320"/>
+      <stop offset="100%" stop-color="#080b14"/>
+    </radialGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4facfe" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#4facfe" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="quantumGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a371f7" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#a371f7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scanLine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4facfe" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#4facfe" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#4facfe" stop-opacity="0.3"/>
+      <stop offset="55%" stop-color="#4facfe" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4facfe"/>
+      <stop offset="30%" stop-color="#a371f7"/>
+      <stop offset="60%" stop-color="#f97583"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <linearGradient id="gridFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="hglow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="hglow2"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="hglow3"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="textShadow"><feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#4facfe" flood-opacity="0.5"/></filter>
+
+    <!-- Animated gradient for ring -->
+    <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4facfe">
+        <animate attributeName="stop-color" values="#4facfe;#a371f7;#f97583;#4facfe" dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#a371f7">
+        <animate attributeName="stop-color" values="#a371f7;#f97583;#4facfe;#a371f7" dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Clip path for scan line -->
+    <clipPath id="viewClip"><rect width="1200" height="500"/></clipPath>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="500" fill="url(#hbg)"/>
+  
+  <!-- Grid pattern -->
+  <g opacity="0.15">
+    <line x1="0" y1="50" x2="1200" y2="50" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="250" x2="1200" y2="250" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="350" x2="1200" y2="350" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="0" y1="450" x2="1200" y2="450" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="100" y1="0" x2="100" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="300" y1="0" x2="300" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="500" y1="0" x2="500" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="700" y1="0" x2="700" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="900" y1="0" x2="900" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="1000" y1="0" x2="1000" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+    <line x1="1100" y1="0" x2="1100" y2="500" stroke="#1e3a5f" stroke-width="0.5"/>
+  </g>
+
+  <!-- Scanning line effect -->
+  <rect width="1200" height="80" fill="url(#scanLine)" clip-path="url(#viewClip)">
+    <animate attributeName="y" values="-80;500" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Central glow behind logo -->
+  <ellipse cx="600" cy="185" rx="300" ry="150" fill="url(#coreGlow)">
+    <animate attributeName="rx" values="280;320;280" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="ry" values="140;160;140" dur="4s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- ═══ NETWORK GRAPH VISUALIZATION (Left side) ═══ -->
+  <g opacity="0.6">
+    <!-- Left cluster - fraud ring -->
+    <circle cx="120" cy="150" r="8" fill="#ef4444" opacity="0.6" filter="url(#hglow3)">
+      <animate attributeName="r" values="7;9;7" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="80" cy="200" r="6" fill="#f97316" opacity="0.5"/>
+    <circle cx="160" cy="210" r="7" fill="#ef4444" opacity="0.5">
+      <animate attributeName="opacity" values="0.4;0.7;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="140" cy="260" r="5" fill="#f97316" opacity="0.4"/>
+    <circle cx="70" cy="280" r="6" fill="#eab308" opacity="0.4"/>
+    <circle cx="180" cy="310" r="7" fill="#ef4444" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="110" cy="340" r="5" fill="#eab308" opacity="0.4"/>
+
+    <!-- Edges with animated data packets -->
+    <line x1="120" y1="158" x2="80" y2="194" stroke="#ef4444" stroke-width="0.8" opacity="0.3"/>
+    <line x1="120" y1="158" x2="160" y2="203" stroke="#ef4444" stroke-width="0.8" opacity="0.3"/>
+    <line x1="80" y1="206" x2="140" y2="255" stroke="#f97316" stroke-width="0.8" opacity="0.2"/>
+    <line x1="160" y1="217" x2="140" y2="255" stroke="#ef4444" stroke-width="0.8" opacity="0.3"/>
+    <line x1="140" y1="265" x2="70" y2="274" stroke="#eab308" stroke-width="0.8" opacity="0.2"/>
+    <line x1="140" y1="265" x2="180" y2="303" stroke="#ef4444" stroke-width="0.8" opacity="0.3"/>
+    <line x1="70" y1="286" x2="110" y2="335" stroke="#eab308" stroke-width="0.8" opacity="0.2"/>
+    <line x1="180" y1="317" x2="110" y2="335" stroke="#ef4444" stroke-width="0.8" opacity="0.3"/>
+
+    <!-- Animated packet on ring -->
+    <circle r="2.5" fill="#ef4444" filter="url(#hglow3)">
+      <animate attributeName="cx" values="120;80;140;160;120" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="150;200;260;210;150" dur="4s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Right cluster - clean network -->
+    <circle cx="1050" cy="120" r="5" fill="#22c55e" opacity="0.4"/>
+    <circle cx="1100" cy="160" r="6" fill="#22c55e" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1030" cy="200" r="7" fill="#22c55e" opacity="0.4"/>
+    <circle cx="1080" cy="240" r="5" fill="#3fb950" opacity="0.5"/>
+    <circle cx="1120" cy="280" r="6" fill="#22c55e" opacity="0.4">
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="2.5s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="1060" cy="320" r="5" fill="#3fb950" opacity="0.4"/>
+    <circle cx="1010" cy="350" r="6" fill="#22c55e" opacity="0.5"/>
+
+    <line x1="1050" y1="125" x2="1100" y2="155" stroke="#22c55e" stroke-width="0.8" opacity="0.25"/>
+    <line x1="1100" y1="166" x2="1030" y2="194" stroke="#22c55e" stroke-width="0.8" opacity="0.25"/>
+    <line x1="1030" y1="207" x2="1080" y2="235" stroke="#3fb950" stroke-width="0.8" opacity="0.2"/>
+    <line x1="1080" y1="245" x2="1120" y2="274" stroke="#22c55e" stroke-width="0.8" opacity="0.25"/>
+    <line x1="1120" y1="286" x2="1060" y2="315" stroke="#3fb950" stroke-width="0.8" opacity="0.2"/>
+    <line x1="1060" y1="325" x2="1010" y2="345" stroke="#22c55e" stroke-width="0.8" opacity="0.25"/>
+
+    <!-- More scattered nodes -->
+    <circle cx="250" cy="100" r="4" fill="#58a6ff" opacity="0.3">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="380" r="5" fill="#a371f7" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.5;0.2" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="950" cy="100" r="4" fill="#58a6ff" opacity="0.3">
+      <animate attributeName="opacity" values="0.1;0.4;0.1" dur="4s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="900" cy="380" r="5" fill="#fbbf24" opacity="0.3">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    <circle cx="350" cy="420" r="3" fill="#f97583" opacity="0.2"/>
+    <circle cx="850" cy="430" r="4" fill="#3fb950" opacity="0.25"/>
+  </g>
+
+  <!-- ═══ CENTRAL TITLE AREA ═══ -->
+  <!-- Rotating outer ring -->
+  <circle cx="600" cy="170" r="95" fill="none" stroke="url(#ringGrad)" stroke-width="1" stroke-dasharray="8 12" opacity="0.4">
+    <animateTransform attributeName="transform" type="rotate" from="0 600 170" to="360 600 170" dur="30s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="170" r="80" fill="none" stroke="url(#ringGrad)" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.3">
+    <animateTransform attributeName="transform" type="rotate" from="360 600 170" to="0 600 170" dur="20s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Shield icon -->
+  <g transform="translate(570, 115)" filter="url(#hglow)">
+    <path d="M30 5 L55 15 L55 35 C55 55 42 70 30 75 C18 70 5 55 5 35 L5 15 Z" fill="none" stroke="url(#titleGrad)" stroke-width="2" opacity="0.8">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M20 38 L28 46 L42 28" fill="none" stroke="#4facfe" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Main title -->
+  <text x="600" y="225" text-anchor="middle" fill="url(#titleGrad)" font-size="42" font-family="'Segoe UI', system-ui, sans-serif" font-weight="900" letter-spacing="4" filter="url(#textShadow)">MulingNetAI</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="255" text-anchor="middle" fill="#8b949e" font-size="14" font-family="monospace" letter-spacing="6">MONEY MULING DETECTION ENGINE</text>
+  
+  <!-- Animated underline -->
+  <rect x="350" y="265" width="0" height="2" rx="1" fill="url(#titleGrad)">
+    <animate attributeName="width" values="0;500" dur="2s" fill="freeze"/>
+    <animate attributeName="x" values="600;350" dur="2s" fill="freeze"/>
+  </rect>
+
+  <!-- ═══ FEATURE PILLS ═══ -->
+  <g transform="translate(235, 290)">
+    <!-- Graph Theory -->
+    <rect x="0" y="0" width="130" height="32" rx="16" fill="#58a6ff" opacity="0.1" stroke="#58a6ff" stroke-width="1">
+      <animate attributeName="opacity" values="0.08;0.2;0.08" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="18" cy="16" r="5" fill="#58a6ff" opacity="0.6"/>
+    <text x="70" y="21" text-anchor="middle" fill="#58a6ff" font-size="10" font-family="monospace" font-weight="700">Graph Theory</text>
+    
+    <!-- Machine Learning -->
+    <rect x="145" y="0" width="155" height="32" rx="16" fill="#a371f7" opacity="0.1" stroke="#a371f7" stroke-width="1">
+      <animate attributeName="opacity" values="0.08;0.2;0.08" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <circle cx="163" cy="16" r="5" fill="#a371f7" opacity="0.6"/>
+    <text x="225" y="21" text-anchor="middle" fill="#a371f7" font-size="10" font-family="monospace" font-weight="700">Machine Learning</text>
+    
+    <!-- Quantum QAOA -->
+    <rect x="315" y="0" width="145" height="32" rx="16" fill="#f97583" opacity="0.1" stroke="#f97583" stroke-width="1">
+      <animate attributeName="opacity" values="0.08;0.2;0.08" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <circle cx="333" cy="16" r="5" fill="#f97583" opacity="0.6"/>
+    <text x="392" y="21" text-anchor="middle" fill="#f97583" font-size="10" font-family="monospace" font-weight="700">Quantum QAOA</text>
+    
+    <!-- LLM Forensics -->
+    <rect x="475" y="0" width="145" height="32" rx="16" fill="#3fb950" opacity="0.1" stroke="#3fb950" stroke-width="1">
+      <animate attributeName="opacity" values="0.08;0.2;0.08" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <circle cx="493" cy="16" r="5" fill="#3fb950" opacity="0.6"/>
+    <text x="552" y="21" text-anchor="middle" fill="#3fb950" font-size="10" font-family="monospace" font-weight="700">LLM Forensics</text>
+    
+    <!-- Real-time -->
+    <rect x="635" y="0" width="100" height="32" rx="16" fill="#fbbf24" opacity="0.1" stroke="#fbbf24" stroke-width="1">
+      <animate attributeName="opacity" values="0.08;0.2;0.08" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <circle cx="653" cy="16" r="5" fill="#fbbf24" opacity="0.6"/>
+    <text x="690" y="21" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="monospace" font-weight="700">Real-time</text>
+  </g>
+
+  <!-- ═══ STAT BOXES ═══ -->
+  <g transform="translate(140, 355)">
+    <!-- Box 1 -->
+    <rect x="0" y="0" width="170" height="70" rx="10" fill="#161b22" stroke="#58a6ff" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="85" y="28" text-anchor="middle" fill="#4facfe" font-size="26" font-family="'Segoe UI', sans-serif" font-weight="900">7.17s</text>
+    <text x="85" y="50" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">10K Transaction Pipeline</text>
+    
+    <!-- Box 2 -->
+    <rect x="190" y="0" width="170" height="70" rx="10" fill="#161b22" stroke="#a371f7" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </rect>
+    <text x="275" y="28" text-anchor="middle" fill="#a371f7" font-size="26" font-family="'Segoe UI', sans-serif" font-weight="900">963</text>
+    <text x="275" y="50" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">Fraud Rings Detected</text>
+    
+    <!-- Box 3 -->
+    <rect x="380" y="0" width="170" height="70" rx="10" fill="#161b22" stroke="#f97583" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+    <text x="465" y="28" text-anchor="middle" fill="#f97583" font-size="26" font-family="'Segoe UI', sans-serif" font-weight="900">6</text>
+    <text x="465" y="50" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">Intelligent Agents</text>
+    
+    <!-- Box 4 -->
+    <rect x="570" y="0" width="170" height="70" rx="10" fill="#161b22" stroke="#3fb950" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </rect>
+    <text x="655" y="28" text-anchor="middle" fill="#3fb950" font-size="26" font-family="'Segoe UI', sans-serif" font-weight="900">QAOA</text>
+    <text x="655" y="50" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">Quantum Optimization</text>
+    
+    <!-- Box 5 -->
+    <rect x="760" y="0" width="170" height="70" rx="10" fill="#161b22" stroke="#fbbf24" stroke-width="1" opacity="0.8">
+      <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </rect>
+    <text x="845" y="28" text-anchor="middle" fill="#fbbf24" font-size="26" font-family="'Segoe UI', sans-serif" font-weight="900">9</text>
+    <text x="845" y="50" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">Dashboard Tabs</text>
+  </g>
+
+  <!-- ═══ BOTTOM: Animated tagline ═══ -->
+  <text x="600" y="465" text-anchor="middle" fill="#30363d" font-size="11" font-family="monospace" font-style="italic">"Financial crime leaves a trail. MulingNetAI reads the graph."</text>
+
+  <!-- ═══ FLOATING PARTICLES ═══ -->
+  <circle r="1.5" fill="#4facfe" opacity="0.5" filter="url(#hglow3)">
+    <animate attributeName="cx" values="100;400;100" dur="25s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="100;400;100" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2" fill="#a371f7" opacity="0.4" filter="url(#hglow3)">
+    <animate attributeName="cx" values="1100;700;1100" dur="22s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="80;420;80" dur="20s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.5;0" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="1.8" fill="#f97583" opacity="0.3" filter="url(#hglow3)">
+    <animate attributeName="cx" values="500;900;500" dur="20s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="50;450;50" dur="16s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.5;0" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="1.2" fill="#3fb950" opacity="0.4" filter="url(#hglow3)">
+    <animate attributeName="cx" values="300;800;300" dur="18s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="400;100;400" dur="15s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="2.5" fill="#fbbf24" opacity="0.3" filter="url(#hglow3)">
+    <animate attributeName="cx" values="200;600;200" dur="16s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="300;80;300" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.4;0" dur="5s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="1" fill="#79c0ff" opacity="0.5">
+    <animate attributeName="cx" values="800;200;800" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="cy" values="200;300;200" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;0.6;0" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Corner accents -->
+  <line x1="20" y1="20" x2="80" y2="20" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="20" y1="20" x2="20" y2="80" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="1120" y1="20" x2="1180" y2="20" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="1180" y1="20" x2="1180" y2="80" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="20" y1="420" x2="20" y2="480" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="20" y1="480" x2="80" y2="480" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="1180" y1="420" x2="1180" y2="480" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+  <line x1="1120" y1="480" x2="1180" y2="480" stroke="#4facfe" stroke-width="1" opacity="0.4"/>
+
+  <!-- Built for RIFT badge -->
+  <rect x="490" y="450" width="220" height="26" rx="13" fill="#161b22" stroke="#21262d" stroke-width="1"/>
+  <text x="600" y="468" text-anchor="middle" fill="#484f58" font-size="10" font-family="monospace">Built for RIFT 2026 — Graph Track</text>
+</svg>

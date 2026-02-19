@@ -1,0 +1,183 @@
+{
+  "name": "MulingNet AI — Fraud Detection Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "muling-detect",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "url": "=http://localhost:8000/api/analyze",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "id": "http-analyze",
+      "name": "Analyze CSV",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $json.summary.suspicious_accounts_flagged }}",
+              "operation": "largerEqual",
+              "value2": 1
+            }
+          ]
+        }
+      },
+      "id": "if-suspicious",
+      "name": "Suspicious Found?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "alert-msg",
+              "name": "alert_message",
+              "value": "=🚨 ALERT: {{ $json.summary.suspicious_accounts_flagged }} suspicious accounts and {{ $json.summary.fraud_rings_detected }} fraud rings detected!",
+              "type": "string"
+            },
+            {
+              "id": "risk-level",
+              "name": "risk_level",
+              "value": "={% if $json.summary.suspicious_accounts_flagged > 10 %}CRITICAL{% elif $json.summary.suspicious_accounts_flagged > 5 %}HIGH{% else %}MEDIUM{% endif %}",
+              "type": "string"
+            },
+            {
+              "id": "total-accounts",
+              "name": "total_accounts",
+              "value": "={{ $json.summary.total_accounts_analyzed }}",
+              "type": "number"
+            },
+            {
+              "id": "flagged-count",
+              "name": "flagged_count",
+              "value": "={{ $json.summary.suspicious_accounts_flagged }}",
+              "type": "number"
+            },
+            {
+              "id": "rings-count",
+              "name": "rings_detected",
+              "value": "={{ $json.summary.fraud_rings_detected }}",
+              "type": "number"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-alert",
+      "name": "Build Alert",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [880, 200]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "clean-msg",
+              "name": "message",
+              "value": "✅ Clean — No suspicious accounts detected in {{ $json.summary.total_accounts_analyzed }} accounts analyzed.",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-clean",
+      "name": "Mark Clean",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.2,
+      "position": [880, 420]
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "id": "respond-alert",
+      "name": "Respond Alert",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1100, 200]
+    },
+    {
+      "parameters": {
+        "respondWith": "allIncomingItems",
+        "options": {}
+      },
+      "id": "respond-clean",
+      "name": "Respond Clean",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1100, 420]
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [{ "node": "Analyze CSV", "type": "main", "index": 0 }]
+      ]
+    },
+    "Analyze CSV": {
+      "main": [
+        [{ "node": "Suspicious Found?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Suspicious Found?": {
+      "main": [
+        [{ "node": "Build Alert", "type": "main", "index": 0 }],
+        [{ "node": "Mark Clean", "type": "main", "index": 0 }]
+      ]
+    },
+    "Build Alert": {
+      "main": [
+        [{ "node": "Respond Alert", "type": "main", "index": 0 }]
+      ]
+    },
+    "Mark Clean": {
+      "main": [
+        [{ "node": "Respond Clean", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    { "name": "fraud-detection" },
+    { "name": "mulingnet" },
+    { "name": "rift-2026" }
+  ]
+}

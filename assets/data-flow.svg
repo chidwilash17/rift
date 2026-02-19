@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 380" fill="none">
+  <defs>
+    <radialGradient id="dfbg" cx="50%" cy="50%" r="70%"><stop offset="0%" stop-color="#111827"/><stop offset="100%" stop-color="#080b14"/></radialGradient>
+    <filter id="dfg"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="dfg2"><feGaussianBlur stdDeviation="1.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="dfscan" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3fb950" stop-opacity="0"/><stop offset="50%" stop-color="#3fb950" stop-opacity="0.06"/><stop offset="100%" stop-color="#3fb950" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="1100" height="380" fill="url(#dfbg)" rx="14"/>
+  <g opacity="0.04"><line x1="0" y1="95" x2="1100" y2="95" stroke="#4facfe" stroke-width="0.5"/><line x1="0" y1="190" x2="1100" y2="190" stroke="#4facfe" stroke-width="0.5"/><line x1="0" y1="285" x2="1100" y2="285" stroke="#4facfe" stroke-width="0.5"/></g>
+  <rect width="80" height="380" fill="url(#dfscan)"><animate attributeName="x" values="-80;1100" dur="5s" repeatCount="indefinite"/></rect>
+
+  <text x="550" y="30" text-anchor="middle" fill="#c9d1d9" font-size="16" font-family="'Segoe UI',sans-serif" font-weight="800" letter-spacing="1.5">END-TO-END DATA FLOW</text>
+  <rect x="350" y="37" width="400" height="1.5" rx="0.75" fill="#4facfe" opacity="0.25"><animate attributeName="opacity" values="0.15;0.4;0.15" dur="3s" repeatCount="indefinite"/></rect>
+
+  <!-- INPUT Section -->
+  <g transform="translate(20,55)">
+    <rect width="200" height="145" rx="12" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/></rect>
+    <rect width="200" height="4" rx="2" fill="#58a6ff" opacity="0.5"/>
+    <text x="100" y="25" text-anchor="middle" fill="#58a6ff" font-size="13" font-family="monospace" font-weight="800">📄 INPUT CSV</text>
+    <line x1="20" y1="35" x2="180" y2="35" stroke="#21262d" stroke-width="0.5"/>
+    <text x="100" y="55" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">10,000 transactions</text>
+    <text x="100" y="72" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">sender_account</text>
+    <text x="100" y="87" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">receiver_account</text>
+    <text x="100" y="102" text-anchor="middle" fill="#484f58" font-size="9" font-family="monospace">amount · timestamp</text>
+    <rect x="20" y="115" width="160" height="20" rx="4" fill="#58a6ff" opacity="0.08" stroke="#58a6ff" stroke-width="0.5"/>
+    <text x="100" y="130" text-anchor="middle" fill="#58a6ff" font-size="8" font-family="monospace" font-weight="700">→ 3,059 unique accounts</text>
+  </g>
+
+  <!-- Arrow Input → Processing -->
+  <line x1="225" y1="125" x2="275" y2="125" stroke="#58a6ff" stroke-width="2" stroke-dasharray="5 3" opacity="0.4"/>
+  <circle r="4" fill="#58a6ff" filter="url(#dfg2)"><animate attributeName="cx" values="225;275" dur="1.5s" repeatCount="indefinite"/><animate attributeName="cy" values="125;125" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="1.5s" repeatCount="indefinite"/></circle>
+
+  <!-- PROCESSING Section -->
+  <g transform="translate(280,55)">
+    <rect width="340" height="295" rx="12" fill="#0d1117" stroke="#a371f7" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite"/></rect>
+    <rect width="340" height="4" rx="2" fill="#a371f7" opacity="0.5"/>
+    <text x="170" y="25" text-anchor="middle" fill="#a371f7" font-size="13" font-family="monospace" font-weight="800">⚡ MULTI-AGENT SCORING</text>
+
+    <!-- Agent sub-cards -->
+    <g transform="translate(15,40)">
+      <rect width="145" height="55" rx="8" fill="#161b22" stroke="#58a6ff" stroke-width="1"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite"/></rect>
+      <text x="72" y="20" text-anchor="middle" fill="#58a6ff" font-size="10" font-family="monospace" font-weight="700">🔗 Graph</text>
+      <text x="72" y="36" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">SCC · PageRank · Btw</text>
+      <text x="72" y="48" text-anchor="middle" fill="#58a6ff" font-size="8" font-family="monospace" font-weight="700">w = 0.40</text>
+    </g>
+    <g transform="translate(175,40)">
+      <rect width="145" height="55" rx="8" fill="#161b22" stroke="#a371f7" stroke-width="1"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" begin="0.3s"/></rect>
+      <text x="72" y="20" text-anchor="middle" fill="#a371f7" font-size="10" font-family="monospace" font-weight="700">🤖 ML</text>
+      <text x="72" y="36" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">IF + RF · 25 features</text>
+      <text x="72" y="48" text-anchor="middle" fill="#a371f7" font-size="8" font-family="monospace" font-weight="700">w = 0.35</text>
+    </g>
+    <g transform="translate(15,105)">
+      <rect width="145" height="55" rx="8" fill="#161b22" stroke="#f97583" stroke-width="1"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" begin="0.6s"/></rect>
+      <text x="72" y="20" text-anchor="middle" fill="#f97583" font-size="10" font-family="monospace" font-weight="700">⚛️ Quantum</text>
+      <text x="72" y="36" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">QAOA · Top 10 rings</text>
+      <text x="72" y="48" text-anchor="middle" fill="#f97583" font-size="8" font-family="monospace" font-weight="700">w = 0.25</text>
+    </g>
+    <g transform="translate(175,105)">
+      <rect width="145" height="55" rx="8" fill="#161b22" stroke="#3fb950" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></rect>
+      <text x="72" y="20" text-anchor="middle" fill="#3fb950" font-size="10" font-family="monospace" font-weight="700">⚖️ Aggregator</text>
+      <text x="72" y="36" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">Σ(wᵢ·sᵢ) → classify</text>
+      <text x="72" y="48" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace" font-weight="700">threshold ≥ 25</text>
+    </g>
+
+    <!-- Arrow aggregator → post-processing -->
+    <line x1="170" y1="170" x2="170" y2="185" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.4"/>
+
+    <!-- Post-processing agents -->
+    <g transform="translate(15,190)">
+      <rect width="145" height="45" rx="8" fill="#161b22" stroke="#fbbf24" stroke-width="1"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" begin="1.2s"/></rect>
+      <text x="72" y="18" text-anchor="middle" fill="#fbbf24" font-size="10" font-family="monospace" font-weight="700">🎯 Disruption</text>
+      <text x="72" y="34" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">Centrality · Pair removal</text>
+    </g>
+    <g transform="translate(175,190)">
+      <rect width="145" height="45" rx="8" fill="#161b22" stroke="#f472b6" stroke-width="1"><animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" begin="1.5s"/></rect>
+      <text x="72" y="18" text-anchor="middle" fill="#f472b6" font-size="10" font-family="monospace" font-weight="700">🕵️ Crime Team</text>
+      <text x="72" y="34" text-anchor="middle" fill="#484f58" font-size="7" font-family="monospace">4 LLM agents · Briefing</text>
+    </g>
+
+    <!-- Inner data packets -->
+    <circle r="2.5" fill="#3fb950" filter="url(#dfg2)"><animate attributeName="cx" values="90;250;90;250;90" dur="4s" repeatCount="indefinite"/><animate attributeName="cy" values="70;70;135;135;70" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.7;0.3;0.7;0.3;0.7" dur="4s" repeatCount="indefinite"/></circle>
+
+    <!-- n8n webhook marker -->
+    <rect x="15" y="250" width="305" height="30" rx="6" fill="#f97583" opacity="0.05" stroke="#f97583" stroke-width="0.8" stroke-dasharray="3 2"><animate attributeName="stroke-opacity" values="0.2;0.6;0.2" dur="3s" repeatCount="indefinite"/></rect>
+    <text x="170" y="270" text-anchor="middle" fill="#f97583" font-size="8" font-family="monospace">🔗 n8n Webhook → Slack/Email/Teams alerts</text>
+  </g>
+
+  <!-- Arrow Processing → Output -->
+  <line x1="625" y1="190" x2="675" y2="190" stroke="#3fb950" stroke-width="2" stroke-dasharray="5 3" opacity="0.4"/>
+  <circle r="4" fill="#3fb950" filter="url(#dfg2)"><animate attributeName="cx" values="625;675" dur="1.5s" repeatCount="indefinite"/><animate attributeName="cy" values="190;190" dur="1.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.9;0" dur="1.5s" repeatCount="indefinite"/></circle>
+
+  <!-- OUTPUT Section -->
+  <g transform="translate(680,55)">
+    <rect width="400" height="295" rx="12" fill="#0d1117" stroke="#3fb950" stroke-width="1.5"><animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="4s" repeatCount="indefinite" begin="0.5s"/></rect>
+    <rect width="400" height="4" rx="2" fill="#3fb950" opacity="0.5"/>
+    <text x="200" y="25" text-anchor="middle" fill="#3fb950" font-size="13" font-family="monospace" font-weight="800">📊 9-TAB DASHBOARD OUTPUT</text>
+
+    <!-- Two columns of output cards -->
+    <g transform="translate(10,35)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#58a6ff" font-size="9" font-family="monospace" font-weight="600">📊 Graph Visualization</text></g>
+    <g transform="translate(200,35)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#a371f7" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#a371f7" font-size="9" font-family="monospace" font-weight="600">💍 Fraud Ring Table</text></g>
+    <g transform="translate(10,72)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#f97583" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#f97583" font-size="9" font-family="monospace" font-weight="600">⚛️ Quantum Results</text></g>
+    <g transform="translate(200,72)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#fbbf24" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#fbbf24" font-size="9" font-family="monospace" font-weight="600">🎯 Disruption Analysis</text></g>
+    <g transform="translate(10,109)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#f472b6" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#f472b6" font-size="9" font-family="monospace" font-weight="600">🕵️ Crime Team Brief</text></g>
+    <g transform="translate(200,109)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#79c0ff" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#79c0ff" font-size="9" font-family="monospace" font-weight="600">🧪 What-If Simulator</text></g>
+    <g transform="translate(10,146)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#3fb950" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#3fb950" font-size="9" font-family="monospace" font-weight="600">📈 Agent Score Charts</text></g>
+    <g transform="translate(200,146)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#58a6ff" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#58a6ff" font-size="9" font-family="monospace" font-weight="600">👤 Account Lookup</text></g>
+    <g transform="translate(105,183)"><rect width="180" height="30" rx="6" fill="#161b22" stroke="#fbbf24" stroke-width="0.8"/><text x="90" y="20" text-anchor="middle" fill="#fbbf24" font-size="9" font-family="monospace" font-weight="600">📋 JSON + Download</text></g>
+
+    <!-- Labels -->
+    <rect x="10" y="225" width="377" height="55" rx="8" fill="#3fb950" opacity="0.04" stroke="#3fb950" stroke-width="0.5"/>
+    <text x="200" y="245" text-anchor="middle" fill="#c9d1d9" font-size="9" font-family="monospace" font-weight="700">Classification Counts</text>
+    <text x="200" y="260" text-anchor="middle" fill="#484f58" font-size="8" font-family="monospace">✅ Clean | ⚠️ Suspicious | 🚨 High Risk | 💀 Confirmed Mule</text>
+    <text x="200" y="275" text-anchor="middle" fill="#3fb950" font-size="8" font-family="monospace" font-weight="700">Copy to clipboard · Download JSON · Export</text>
+  </g>
+
+  <!-- Floating particles -->
+  <circle r="1.5" fill="#4facfe" opacity="0.2" filter="url(#dfg2)"><animate attributeName="cx" values="50;1050;50" dur="20s" repeatCount="indefinite"/><animate attributeName="cy" values="350;100;350" dur="14s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.3;0" dur="6s" repeatCount="indefinite"/></circle>
+  <circle r="1.8" fill="#a371f7" opacity="0.25" filter="url(#dfg2)"><animate attributeName="cx" values="1050;50;1050" dur="18s" repeatCount="indefinite"/><animate attributeName="cy" values="80;350;80" dur="12s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.3;0" dur="5s" repeatCount="indefinite"/></circle>
+</svg>
