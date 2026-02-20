@@ -14,8 +14,8 @@
  *         https://rift-a9qf.onrender.com
  */
 
-// Empty BASE = relative paths → same-origin on Vercel, proxied by Vite locally
-const BASE = ''
+// Empty BASE = relative paths → same-origin on Vercel/Netlify, proxied by Vite locally
+const BASE = 'https://unheaved-elina-roughly.ngrok-free.dev'
 
 /**
  * Prepend the backend base URL to a path.
@@ -27,14 +27,24 @@ export function apiUrl(path) {
 }
 
 /**
+ * Default headers for all API requests.
+ * ngrok-skip-browser-warning bypasses ngrok's interstitial page.
+ */
+export const API_HEADERS = {
+    'ngrok-skip-browser-warning': 'true',
+    'User-Agent': 'rift-frontend/1.0',
+}
+
+/**
  * Ping the backend health endpoint to warm up the instance.
- * PythonAnywhere and Render free-tier instances can have cold starts.
- * Call this as early as possible (e.g. on app mount) so the server is warm
- * by the time the user uploads a file.
  */
 export async function warmupBackend() {
     try {
-        await fetch(apiUrl('/api/health'), { method: 'GET', cache: 'no-store' })
+        await fetch(apiUrl('/api/health'), {
+            method: 'GET',
+            cache: 'no-store',
+            headers: API_HEADERS,
+        })
     } catch (_) {
         // Ignore — warmup is best-effort
     }
