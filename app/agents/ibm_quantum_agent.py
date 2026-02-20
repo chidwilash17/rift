@@ -148,9 +148,8 @@ class IBMQuantumAgent:
             return False
         try:
             self._service = QiskitRuntimeService(
-                channel="ibm_quantum_platform",
+                channel="ibm_quantum",
                 token=self._ibm_token,
-                instance="open-instance",
             )
             logger.info("Connected to IBM Quantum service")
             return True

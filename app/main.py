@@ -41,17 +41,6 @@ from app.agents.whatif_simulator import WhatIfSimulator
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("muling_engine")
 
-# Silence noisy Qiskit internals (transpiler pass-by-pass chatter)
-for _noisy in (
-    "qiskit.passmanager.base_tasks",
-    "qiskit.passmanager",
-    "qiskit.compiler.transpiler",
-    "qiskit.compiler",
-    "stevedore.extension",
-    "stevedore",
-):
-    logging.getLogger(_noisy).setLevel(logging.WARNING)
-
 # App
 app = FastAPI(
     title="Money Muling Detection Engine",
