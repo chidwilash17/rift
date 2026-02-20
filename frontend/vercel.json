@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
   "functions": {
     "api/[...path].js": {
       "maxDuration": 300,
@@ -9,7 +7,6 @@
   },
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/api/(.*)", "dest": "/api/[...path]" },
-    { "src": "/(.*)",     "dest": "/index.html"    }
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
